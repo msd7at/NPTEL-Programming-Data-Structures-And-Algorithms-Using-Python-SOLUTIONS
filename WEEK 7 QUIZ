@@ -1,0 +1,79 @@
+Week 7 Quiz
+The due date for submitting this assignment has passed.Due on 2019-09-18, 23:59 IST.
+Assignment submitted on 2019-09-16, 20:08 IST
+All questions carry equal weightage. All Python code is assumed to be executed using Python3. You may submit as many times as you like within the deadline. Your final submission will be graded.
+Note:
+
+If the question asks about a value of type string, remember to enclose your answer in single or double quotes.
+If the question asks about a value of type list, remember to enclose your answer in square brackets and use commas to separate list items.
+Given the following permutation of a,b,c,d,e,f,g,h,i,j, what is the next permutation in lexicographic (dictionary) order? Write your answer without any blank spaces between letters.
+    eibjdhgfca
+eibjfacdgh
+Yes, the answer is correct.
+Score: 2.5
+Accepted Answers:
+(Type: Regex Match) [ ]*eibjfacdgh[ ]*
+(Type: Regex Match) [ ]*\'eibjfacdgh\'[ ]*
+(Type: Regex Match) [ ]*\"eibjfacdgh\"[ ]*
+2.5 points
+2.5 points
+We want to add a function listmax() to the class Node that implements user defined lists such that listmax() computes the maximum value in a list where values are of type int.
+
+An incomplete implementation of listmax() given below. You have to provide expressions to put in place of AAA, BBB and CCC.
+
+    
+     def listmax(self):
+        if self.value == None:
+            return(AAA)
+        elif self.next == None:
+            return(BBB)
+        else:
+            return(CCC)
+ AAA: 0, BBB: self.value, CCC: max(self.value, self.next.listmax())
+ AAA: 0, BBB: self.value, CCC: max(self.value, self.next.value)
+ AAA: None, BBB: self.value, CCC: max(self.value, self.next.listmax())
+ AAA: None, BBB: self.value, CCC: max(self.value, self.next.value)
+Yes, the answer is correct.
+Score: 2.5
+Feedback:
+listmax is not defined for the empty list, so AAA is None.
+If the list has only one value, that value is the maximum, so BBB is self.value.
+If there are two or more elements, inductively compute the maximum of the rest of the list and take the max with respect to the current values, so CCC is max(self.value,self.next.listmax())
+Accepted Answers:
+AAA: None, BBB: self.value, CCC: max(self.value, self.next.listmax())
+2.5 points
+Suppose we add this function foo() to the class Tree that implements search trees. For a name mytree with a value of type Tree, what would mytree.foo() compute?
+
+    def foo(self):
+        if self.isempty():
+            return(0)
+        elif self.isleaf():
+            return(1)
+        else:
+            return(self.left.foo() + self.right.foo()))
+ The number of nodes in mytree
+ The largest value in mytree.
+ The length of the longest path from root to leaf in mytree.
+ The number of leaves in mytree.
+Yes, the answer is correct.
+Score: 2.5
+Feedback:
+This computes the number of leaves in the tree. An empty tree has no leaves. A tree with just one node has a single leaf. Otherwise, compute the number of leaves in left and right subtrees and add them.
+
+This does not compute the number of nodes in the tree. For that, we need to add 1 in the inductive case, to account for the current node. So the else: expression would be return(1 + self.left.foo() + self.right.foo())).
+
+Accepted Answers:
+The number of leaves in mytree.
+Inorder traversal of a binary tree has been defined in the lectures. A postorder traversal lists the vertices of a binary tree (not necessarily a search tree) as follows:
+Print the left subtree in postorder.
+Print the right subtree in postorder.
+Print the root.
+Suppose we have a binary tree with 10 nodes labelled a, b, c, d, e, f, g, h, i, j, with postorder traversal ehicbjfadg and inorder traversal ehbicgjafd. What is the left child of the root node?
+[b]
+Hint
+Feedback:
+From the post traversal, g is the root. The inorder traversal tells us that ehbic lie to the left of the root. The postorder traversal of this segment says b is the root of this subtree, so b is the left child of the root.
+Accepted Answers:
+(Type: Regex Match) [ ]*b[ ]*
+(Type: Regex Match) [ ]*\'b\'[ ]*
+(Type: Regex Match) [ ]*\"b\"[ ]*
