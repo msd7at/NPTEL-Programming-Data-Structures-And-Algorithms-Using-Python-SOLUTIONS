@@ -1,0 +1,46 @@
+VIDEO LINK:-https://youtu.be/oG9oB0P3zsU
+
+Week 6 Quiz
+
+All questions carry equal weightage. All Python code is assumed to be executed using Python3. You may submit as many times as you like within the deadline. Your final submission will be graded.
+Note:
+
+If the question asks about a value of type string, remember to enclose your answer in single or double quotes.
+If the question asks about a value of type list, remember to enclose your answer in square brackets and use commas to separate list items.
+2.5 points
+Suppose u and v both denote sets in Python. Under what condition can we guarantee that u - (u - v) == v?
+ The sets u and v should be disjoint.
+ The set v should be a subset of the set u.
+ The set u should be a subset of the set v.
+ This is true for any u and v.
+Yes, the answer is correct.
+Score: 2.5
+Feedback:
+From u you take away all elements that are not in v and you are left with u ∩ v. Since u ∩ v = v, we have v is a subset of u.
+Accepted Answers:
+The set v should be a subset of the set u.
+2.5 points
+Suppose u and v both denote sets in Python. Under what condition can we guarantee that u|v == u^v?
+ The sets u and v should be disjoint.
+ The set u should be a subset of the set v.
+ The set v should be a subset of the set u.
+ This is true for any u and v.
+Yes, the answer is correct.
+Score: 2.5
+Feedback:
+u^v has all elements that are in exactly one of u or v. This is the same as u|v - u&v. Since u^v = u|v, we have u&v is empty, so u and v are disjoint.
+Accepted Answers:
+The sets u and v should be disjoint.
+Suppose we insert 97 into the max heap [98,67,89,38,42,54,89,17,25]. What is the resulting heap?
+[98,97,89,38,67,54,89,17,25,42]
+Yes, the answer is correct.
+Score: 2.5
+Accepted Answers:
+(Type: Regex Match) [ ]*[[ ]*98[ ]*,[ ]*97[ ]*,[ ]*89[ ]*,[ ]*38[ ]*,[ ]*67[ ]*,[ ]*54[ ]*,[ ]*89[ ]*,[ ]*17[ ]*,[ ]*25[ ]*,[ ]*42[ ]*][ ]*
+2.5 points
+Suppose we we apply delete_max() twice to the heap [100,97,93,38,67,54,93,17,25,42].  What is the resulting heap?
+[93,67,93,38,42,54,25,17]
+Yes, the answer is correct.
+Score: 2.5
+Accepted Answers:
+(Type: Regex Match) [[ ]*93[ ]*,[ ]*67[ ]*,[ ]*93[ ]*,[ ]*38[ ]*,[ ]*42[ ]*,[ ]*54[ ]*,[ ]*25[ ]*,[ ]*17[ ]*][ ]*
