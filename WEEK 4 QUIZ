@@ -1,0 +1,58 @@
+VIDEO LINK:- https://youtu.be/OAU5P1jNDJA
+
+Week 4 Quiz
+
+All questions carry equal weightage. All Python code is assumed to be executed using Python3. You may submit as many times as you like within the deadline. Your final submission will be graded.
+Note:
+
+If the question asks about a value of type string, remember to enclose your answer in single or double quotes.
+If the question asks about a value of type list, remember to enclose your answer in square brackets and use commas to separate list items.
+Consider the following Python function.
+  def mystery(l):
+     if l == []:
+        return (l)
+     else:
+        return (l[-1:] + mystery(l[:-1]))
+What does mystery([31,32,71,18,51]) return?
+[51, 18, 71, 32, 31]
+Yes, the answer is correct.
+Score: 2.5
+Accepted Answers:
+(Type: Regex Match) [ ]*[[ ]*51[ ]*,[ ]*18[ ]*,[ ]*71[ ]*,[ ]*32[ ]*,[ ]*31[ ]*][ ]*
+2.5 points
+What is the value of pairs after the following assignment?
+ pairs = [ (x,y) for x in range(3,0,-1) for y in range(2,0,-1) if (x+y)%3 == 0 ]
+[(2, 1), (1, 2)]
+Yes, the answer is correct.
+Score: 2.5
+Accepted Answers:
+(Type: Regex Match) [ ]*[[ ]*\([ ]*2[ ]*,[ ]*1[ ]*\)[ ]*,[ ]*\([ ]*1[ ]*,[ ]*2[ ]*\)[ ]*][ ]*
+2.5 points
+2.5 points
+Consider the following dictionary.
+   marks = {"Quizzes":{"Mahesh":[3,5,7,8],"Suresh":[9,4,8,8],"Uma":[9,9,7,6]},"Exams":{"Mahesh":[37],"Uma":[36]}}
+Which of the following statements does not generate an error?
+ marks["Exams"]["Suresh"][0:] = [44]
+ marks["Exams"]["Suresh"].append(44)
+ marks["Exams"]["Suresh"] = [44]
+ marks["Exams"]["Suresh"].extend([44])
+Yes, the answer is correct.
+Score: 2.5
+Feedback:
+Direct assignment to a new key adds a value. All other updates result in KeyError.
+Accepted Answers:
+marks["Exams"]["Suresh"] = [44]
+2.5 points
+Assume that d has been initialized as an empty dictionary:
+  d = {}
+Which of the following generates an error?
+ d[12] = 5
+ d["1,2"] = 5
+ d[(1,2)] = 5
+ d[[1,2]] = 5
+Yes, the answer is correct.
+Score: 2.5
+Feedback:
+Key must be an immutable value. List is not OK. Tuple, string and integer are OK.
+Accepted Answers:
+d[[1,2]] = 5
