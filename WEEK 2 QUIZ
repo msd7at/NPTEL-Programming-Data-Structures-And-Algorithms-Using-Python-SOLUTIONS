@@ -1,0 +1,76 @@
+Week 2 Quiz
+The due date for submitting this assignment has passed.Due on 2019-08-21, 23:59 IST.
+Assignment submitted on 2019-08-06, 18:50 IST
+All questions carry equal weightage. All Python code is assumed to be executed using Python3. You may submit as many times as you like within the deadline. Your final submission will be graded.
+Note:
+
+If the question asks about a value of type string, remember to enclose your answer in single or double quotes.
+If the question asks about a value of type list, remember to enclose your answer in square brackets and use commas to separate list items.
+One of the following 10 statements generates an error. Which one? (Your answer should be a number between 1 and 10.)
+
+  x = [1,"abcd",2,"efgh",[3,4]]  # Statement 1
+  y = x[0:50]                    # Statement 2
+  z = y                          # Statement 3
+  w = x                          # Statement 4
+  x[1] = x[1] + 'd'              # Statement 5
+  y[2] = 4                       # Statement 6
+  x[1][1] = 'y'                  # Statement 7
+  z[0] = 0                       # Statement 8
+  w[4][0] = 1000                 # Statement 9
+  a = (x[4][1] == 4)             # Statement 10
+7
+Yes, the answer is correct.
+Score: 2.5
+Feedback:
+Statement 7 is trying to update a position in a string. x[1] is "abcd" and x[1][1] is "b"
+
+Accepted Answers:
+(Type: Regex Match) [ ]*7[ ]
+2.5 points
+2.5 points
+Consider the following lines of Python code.
+
+  x = [13,4,17,1000]
+  w = x[1:]
+  u = x[1:]
+  y = x
+  u[0] = 50
+  y[1] = 40
+Which of the following is correct?
+
+ x[1] == 40, y[1] == 40, w[0] == 4, u[0] == 50
+ x[1] == 50, y[1] == 40, w[0] == 50, u[0] == 50
+ x[1] == 4, y[1] == 40, w[0] == 4, u[0] == 50
+ x[1] == 40, y[1] == 40, w[0] == 50, u[0] == 50
+Yes, the answer is correct.
+Score: 2.5
+Feedback:
+(d) x[1] == 40, y[1] == 40, w[0] == 4, u[0] == 50
+x and y refer to the same list, while w and u are two independent slices. The update to u[0] does not affect any of the other names. The update to y[1] is also reflected in x[1].
+
+Accepted Answers:
+x[1] == 40, y[1] == 40, w[0] == 4, u[0] == 50
+What is the value of endmsg after executing the following lines?
+  startmsg = "hello"
+  endmsg = ""
+  for i in range(0,len(startmsg)):
+    endmsg = startmsg[i] + endmsg
+"olleh"
+Yes, the answer is correct.
+Score: 2.5
+Accepted Answers:
+(Type: Regex Match) \s*\'olleh\'\s*
+(Type: Regex Match) \s*\"olleh\"\s*
+2.5 points
+What is the value of mylist after the following lines are executed?
+  def mystery(l):
+    l = l + l
+    return()
+
+  mylist = [22,34,57]
+  mystery(mylist)
+[22, 34, 57]
+Yes, the answer is correct.
+Score: 2.5
+Accepted Answers:
+(Type: Regex Match) \s*\[\s*22,\s*34,\s*57\s*]\s*
