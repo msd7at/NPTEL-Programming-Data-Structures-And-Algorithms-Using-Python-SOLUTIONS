@@ -1,140 +1,116 @@
 ""
 Week 3 Programming Assignment
-Due on 2019-08-22, 23:59 IST
+Due on 2023-02-16, 23:59 IST
 Write three Python functions as specified below. Paste the text for all three functions together into the submission window. Your function will be called automatically with various inputs and should return values as specified. Do not write commands to read any input or print any output.
-
 You may define additional auxiliary functions as needed.
 In all cases you may assume that the value passed to the function is of the expected type, so your function does not have to check for malformed inputs.
 For each function, there are normally some public test cases and some (hidden) private test cases.
 "Compile and run" will evaluate your submission against the public test cases.
-"Submit" will evaluate your submission against the hidden private test cases. There are 10 private test cases, with equal weightage. You will get feedback about which private test cases pass or fail, though you cannot see the actual test cases.
+"Submit" will evaluate your submission against the hidden private test cases. There are 12 private test cases, with equal weightage. You will get feedback about which private test cases pass or fail, though you cannot see the actual test cases.
 Ignore warnings about "Presentation errors".
-Write a function expanding(l) that takes as input a list of integer l and returns True if the absolute difference between each adjacent pair of elements strictly increases.
+Define a Python function remdup(l) that takes a nonempty list of integers l and removes all duplicates in l, keeping only the last occurrence of each number. For instance:
 
-Here are some examples of how your function should work.
+>>> remdup([3,1,3,5])
+[1, 3, 5]
 
-  >>> expanding([1,3,7,2,9])
-  True
-Explanation: Differences between adjacent elements are 3-1 = 2, 7-3 = 4, 7-2 = 5, 9-2 = 7.
+>>> remdup([7,3,-1,-5])
+[7, 3, -1, -5]
 
-  >>> expanding([1,3,7,2,-3]) 
-  False
-Explanation: Differences between adjacent elements are 3-1 = 2, 7-3 = 4, 7-2 = 5, 2-(-3) = 5, so not strictly increasing.
+>>> remdup([3,5,7,5,3,7,10])
+[5, 3, 7, 10]
+Write a Python function splitsum(l) that takes a nonempty list of integers and returns a list [pos,neg], where pos is the sum of squares all the positive numbers in l and neg is the sum of cubes of all the negative numbers in l.
 
-  >>> expanding([1,3,7,10])
-  False
-Explanation: Differences between adjacent elements are 3-1 = 2, 7-3 = 4, 10-7 = 3, so not (strictly) increasing.
+Here are some examples to show how your function should work.
 
-Write a function accordian(l) that takes as input a list of integer l and returns True if the absolute difference between each adjacent pair of elements alternates between increasing strictly and decreasing strictly.
+>>> splitsum([1,3,-5])
+[10, -125]
 
-Here are some examples of how your function should work.
+>>> splitsum([2,4,6])
+[56, 0]
 
- 
-  >>> accordian([1,5,1])
-  False
-Explanation: Differences between adjacent elements are 5-1 = 4, 5-1 = 4, which are equal.
+>>> splitsum([-19,-7,-6,0])
+[0, -7418]
 
- 
-  >>> accordian([1,5,2,8,3])
-  True
-Explanation: Differences between adjacent elements are 5-1 = 4, 5-2 = 3, 8-2 = 6, 8-3 = 5, so the differences decrease, increase and then decrease.
+>>> splitsum([-1,2,3,-7])
+[13, -344]
+A two dimensional matrix can be represented in Python row-wise, as a list of lists: each inner list represents one row of the matrix. For instance, the matrix
 
- 
-  >>> accordian([-2,1,5,2,8,3]) 
-  True
-Explanation: Differences between adjacent elements are 1-(-2) = 3, 5-1 = 4, 5-2 = 3, 8-2 = 6, 8-3 = 5, so the differences increase, decrease, increase and then decrease.
+1  2  3
+4  5  6 
+7  8  9
+would be represented as [[1, 2, 3], [4, 5, 6], [7, 8, 9]].
 
- 
-  >>> accordian([1,5,2,8,1])
-  False
-Explanation: Differences between adjacent elements are 1-(-2) = 3, 5-1 = 4, 5-2 = 3, 8-2 = 6, 8-1 = 7, so the differences increase, decrease, increase and then increase again.
+A horizonatal flip reflects each row. For instance, if we flip the previous matrix horizontally, we get
 
-A square n×n matrix of integers can be written in Python as a list with n elements, where each element is in turn a list of n integers, representing a row of the matrix. For instance, the matrix
+3  2  1
+6  5  4 
+9  8  7
+which would be represented as [[3, 2, 1], [6, 5, 4], [9, 8, 7]].
 
-  1  2  3
-  4  5  6
-  7  8  9
-would be represented as [[1,2,3], [4,5,6], [7,8,9]].
+A vertical flip reflects each column. For instance, if we flip the previous matrix that has already been flipped horizontally, we get
 
-Write a function rotate(m) that takes a list representation m of a square matrix as input, and returns the matrix obtained by rotating the original matrix clockwize by 90 degrees. For instance, if we rotate the matrix above, we get
+9  8  7
+6  5  4 
+3  2  1
+which would be represented as [[9, 8, 7], [6, 5, 4], [3, 2, 1]].
 
-  7  4  1
-  8  5  2
-  9  6  3
-Your function should not modify the argument m provided to the function rotate().
+Write a Python function matrixflip(m,d) that takes as input a two dimensional matrix m and a direction d, where d is either 'h' or 'v'. If d == 'h', the function should return the matrix flipped horizontally. If d == 'v', the function should retun the matrix flipped vertically. For any other value of d, the function should return m unchanged. In all cases, the argument m should remain undisturbed by the function.
 
-Here are some examples of how your function should work.
+Here are some examples to show how your function should work. You may assume that the input to the function is always a non-empty matrix.
 
- 
-  >>> rotate([[1,2],[3,4]])
-  [[3, 1], [4, 2]]
-Explanation:
+>>> myl = [[1,2],[3,4]]
 
-     1  2    becomes     3  1
-     3  4                4  2
-  
- 
-  >>> rotate([[1,2,3],[4,5,6],[7,8,9]])
-  [[7, 4, 1], [8, 5, 2], [9, 6, 3]]
-Explanation:
+>>> myl
+[[1, 2], [3, 4]]  
 
-     1  2  3    becomes   7  4  1
-     4  5  6              8  5  2
-     7  8  9              9  6  3
-  
-  >>> rotate([[1,1,1],[2,2,2],[3,3,3]])
-  [[3, 2, 1], [3, 2, 1], [3, 2, 1]]
-Explanation:
+>>> matrixflip(myl,'h')
+[[2, 1], [4, 3]]
 
-     1  1  1    becomes   3  2  1
-     2  2  2              3  2  1
-     3  3  3              3  2  1
-  
+>>> myl
+[[1, 2], [3, 4]]  
 
-""
+>>> matrixflip(myl,'v')
+[[3, 4], [1, 2]]  
 
-#SOLUTION
+>>> myl
+[[1, 2], [3, 4]]  
 
-def expanding(l):
-    a=0
-    for i in range(1,len(l)):
-        if a >= abs(l[i]-l[i-1]):
-            return False
-        a=abs(l[i]-l[i-1])
+>>> matrixflip(matrixflip(myl,'h'),'v')
+[[4, 3], [2, 1]]
+
+>>> myl
+[[1, 2], [3, 4]]  
+
+>>> matrixflip(matrixflip(myl,'h'),'v')
+[[4, 3], [2, 1]]
+
+>>> myl
+[[1, 2], [3, 4]]
+
+
+def remdup(l):
+    seen = set()
+    result = []
+    for number in reversed(l):
+        if number not in seen:
+            seen.add(number)
+            result.append(number)
+    return result[::-1]
+def splitsum(l):
+    pos = 0
+    neg = 0
+    for number in l:
+        if number > 0:
+            pos += number**2
+        elif number < 0:
+            neg += number**3
+    return [pos, neg]
+def matrixflip(m, d):
+    if d == 'h':
+        return [row[::-1] for row in m]
+    elif d == 'v':
+        return m[::-1]
     else:
-        return True
-      
-def accordian(l):
-    if len(l)<3:
-        return False
-    new=[]
-    for q in range(len(l)-1):
-        k=abs(l[q]-l[q+1])
-        new.append(k)
-    tep=[]
-    for i in range(0,len(new)-1):
-        if new[i]>new[i+1]:
-            tep.append("L")
-        if new[i]<new[i+1]:
-            tep.append("H")
-        if new[i]==new[i+1]:
-            tep.append("E")
-    if "E" in tep:
-        return False
-    else:
-        for g in range(len(tep)-1):
+        return m
 
-            if tep[g]==tep[g+1]:
-                return False
-        else:
-            return True
-      
-def rotate(m):
-    n=len(m)
-    new=[]
-    for i in range(n):
-        temp=[]
-        for j in range(n-1,-1,-1):
-            temp.append(m[j][i])
-        new.append(temp)
-    return new
+
